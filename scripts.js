@@ -11,6 +11,7 @@ function getComputerChoice() {
             return "paper";
         case 3:
             return "scissors";
+        //invalid response
     }   
  }
 
@@ -35,14 +36,10 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-//player choices:
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+
 
 // create function to play a round 
 function playRound(humanChoice, computerChoice) {
-    //intro
-    console.log("Yay! rock, paper, scissors!");
     //human choice
     console.log("You selected " + humanChoice);
     //computer choice
@@ -51,36 +48,63 @@ function playRound(humanChoice, computerChoice) {
     //compare the computer value to user value 
 
     //user and computer have same result:
-    if (humanChoice == computerChoice)
+    if (humanChoice == computerChoice) {
          console.log("This round is a draw!");
+        }
 
     //user selects rock and computer selects paper:
-    if (humanChoice == "rock" && computerChoice == "paper")
+    if (humanChoice == "rock" && computerChoice == "paper") {
         console.log("Paper covers rock, the computer wins :(");
+        computerScore++;
+    }
 
-    if (humanChoice == "rock" && computerChoice == "scissors")
+    if (humanChoice == "rock" && computerChoice == "scissors") {
         console.log("Rock smashes scissors, you win!");
+        humanScore ++;
+    }
 
-    if (humanChoice == "paper" && computerChoice == "rock")
+    if (humanChoice == "paper" && computerChoice == "rock") {
         console.log("Paper covers rock, you win!");
+        humanScore ++;
+    }
 
-    if (humanChoice == "paper" && computerChoice == "scissors")
+    if (humanChoice == "paper" && computerChoice == "scissors") {
         console.log("Scissors cut paper, the computer wins :(");
+        computerScore++;
+    }
 
-    if (humanChoice == "scissors" && computerChoice == "rock")
+    if (humanChoice == "scissors" && computerChoice == "rock") {
         console.log("Rock smashes scissors, the computer wins :(");
+        computerScore++;
+    }
 
-    if (humanChoice == "scissors" && computerChoice == "paper")
+    if (humanChoice == "scissors" && computerChoice == "paper") {
         console.log("Scissors cut paper, you win!");
+        humanScore ++;
+        }
+    
+    //display scores
+    console.log("The computer's score is "+ computerScore)
+    console.log("Your score is "+ humanScore)
     }
 
 
 
+//Play game function
+function playGame() {
+    //play 5 rounds
+for (let i = 1; i <=5; i += 1) {
+        //player choices:
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }      
+}
 
-//Play round
-playRound(humanChoice, computerChoice);
 
 
+
+playGame();
 
 
 
