@@ -1,4 +1,8 @@
-//have machine randomly generate computer selection of rock, paper, or scissors
+// declare variables to keep track of scores, initialize with 0
+let humanScore = 0;
+let computerScore = 0;
+
+//have computer randomly generate computer selection of rock, paper, or scissors
 function getComputerChoice() {
     //generate a random integer 
     let computerChoice = Math.floor(Math.random() * 3 + 1);
@@ -30,11 +34,6 @@ function getHumanChoice() {
     //return user input
     return userPrompt.toLowerCase();
 }
-
-
-// declare variables to keep track of scores, initialize with 0
-let humanScore = 0;
-let computerScore = 0;
 
 
 
@@ -93,30 +92,28 @@ function playRound(humanChoice, computerChoice) {
 //Play game function
 function playGame() {
     //play 5 rounds
-for (let i = 1; i <=5; i += 1) {
+for (let n = 1; n <=5; n++ ) {
         //player choices:
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }      
+    
+    //compare final scores after 5 rounds and declare winner
+    if (humanScore > computerScore) {
+        console.log("Congrats you're the winner of the game!")
+    }
+
+    if (humanScore == computerScore) {
+        console.log("This game is a draw!")
+    }
+
+    if (humanScore < computerScore) {
+        console.log("So sorry, you lose :(")
+    }
+  
 }
-
-
 
 
 playGame();
 
-
-
-//human and computer choice are the same
-
-//human chooses paper, computer chooses rock
-
-//human chooses rock, computer chooses scissors
-
-
-
-
-//determine which value wins in the comparison
-//display winner and message 
-//store user's and computer's score for each round
