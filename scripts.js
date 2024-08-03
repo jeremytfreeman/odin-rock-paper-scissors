@@ -19,13 +19,11 @@ function getComputerChoice() {
     }   
  }
 
-
 //testing selecting random number calculations
 let randomNumber = Math.random() * 3 + 1;
 randomNumber = Math.floor(randomNumber);
 //console.log(randomNumber);
 //console.log(Math.random())
-
 
 //capture user input of rock, paper, or scissors
 function getHumanChoice() {
@@ -34,8 +32,6 @@ function getHumanChoice() {
     //return user input
     return userPrompt.toLowerCase();
 }
-
-
 
 // create function to play a round 
 function playRound(humanChoice, computerChoice) {
@@ -51,7 +47,6 @@ function playRound(humanChoice, computerChoice) {
          console.log("This round is a draw!");
         }
 
-    //user selects rock and computer selects paper:
     if (humanChoice == "rock" && computerChoice == "paper") {
         console.log("Paper covers rock, the computer wins :(");
         computerScore++;
@@ -82,24 +77,24 @@ function playRound(humanChoice, computerChoice) {
         humanScore ++;
         }
     
-    //display scores
+    //display result of the round
     console.log("The computer's score is "+ computerScore)
     console.log("Your score is "+ humanScore)
     }
 
 
-
-//Play game function
+//play five rounds and declare winner of the game
 function playGame() {
-    //play 5 rounds
+   
+    //loop 5 rounds
 for (let n = 1; n <=5; n++ ) {
-        //player choices:
+        //get player choices:
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }      
     
-    //compare final scores after 5 rounds and declare winner
+    //compare final scores and declare a winner
     if (humanScore > computerScore) {
         console.log("Congrats you're the winner of the game!")
     }
@@ -114,6 +109,4 @@ for (let n = 1; n <=5; n++ ) {
   
 }
 
-
 playGame();
-
