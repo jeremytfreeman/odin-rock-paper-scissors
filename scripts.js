@@ -56,12 +56,6 @@ function playRound(humanChoice, computerChoice) {
       "<br>" +
       "Computer selected " +
       computerChoice +
-      "<br>" +
-      "The computer's score is " +
-      computerScore +
-      "<br>" +
-      "Your score is " +
-      humanScore +
       "<br>";
 
     //human choice
@@ -71,47 +65,99 @@ function playRound(humanChoice, computerChoice) {
 
     //user and computer have same result:
     if (humanChoice == computerChoice) {
-      results.innerHTML = resultsStandard + "This round is a draw!";
-      console.log("This round is a draw!");
+      results.innerHTML =
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "This round is a draw!";
     }
 
     if (humanChoice == "rock" && computerChoice == "paper") {
       console.log("Paper covers rock, the computer wins :(");
       computerScore++;
       results.innerHTML =
-        resultsStandard + "Paper covers rock, the computer wins :(";
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Paper covers rock, the computer wins :(";
     }
 
     if (humanChoice == "rock" && computerChoice == "scissors") {
       console.log("Rock smashes scissors, you win!");
       humanScore++;
-      results.innerHTML = resultsStandard + "Rock smashes scissors, you win!";
+      results.innerHTML =
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Rock smashes scissors, you win!";
     }
 
     if (humanChoice == "paper" && computerChoice == "rock") {
       console.log("Paper covers rock, you win!");
       humanScore++;
-      results.innerHTML = resultsStandard + "Paper covers rock, you win!";
+      results.innerHTML =
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Paper covers rock, you win!";
     }
 
     if (humanChoice == "paper" && computerChoice == "scissors") {
       console.log("Scissors cut paper, the computer wins :(");
       computerScore++;
       results.innerHTML =
-        resultsStandard + "Scissors cut paper, the computer wins :(";
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Scissors cut paper, the computer wins :(";
     }
 
     if (humanChoice == "scissors" && computerChoice == "rock") {
       console.log("Rock smashes scissors, the computer wins :(");
       computerScore++;
       results.innerHTML =
-        resultsStandard + "Rock smashes scissors, the computer wins :(";
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Rock smashes scissors, the computer wins :(";
     }
 
     if (humanChoice == "scissors" && computerChoice == "paper") {
       console.log("Scissors cut paper, you win!");
       humanScore++;
-      results.innerHTML = resultsStandard + "Scissors cut paper, you win!";
+      results.innerHTML =
+        resultsStandard +
+        "The computer's score is " +
+        computerScore +
+        "<br>" +
+        "Your score is " +
+        humanScore +
+        "<br>" +
+        "Scissors cut paper, you win!";
     }
 
     //display result of the round
@@ -125,17 +171,20 @@ function playRound(humanChoice, computerChoice) {
     //compare final scores and declare a winner
     if (humanScore > computerScore) {
       console.log("Congrats you're the winner of the game!");
-      document.getElementById("finalResults").innerHTML = "Congrats you're the winner of the game!";
+      document.getElementById("finalResults").innerHTML =
+        "Congrats you're the winner of the game!";
     }
 
     if (humanScore == computerScore) {
       console.log("This game is a draw!");
-      document.getElementById("finalResults").innerHTML = "This game is a draw!";
+      document.getElementById("finalResults").innerHTML =
+        "This game is a draw!";
     }
 
     if (humanScore < computerScore) {
       console.log("So sorry, you lose :(");
-      document.getElementById("finalResults").innerHTML = "So sorry, you lose :(";
+      document.getElementById("finalResults").innerHTML =
+        "So sorry, you lose :(";
     }
   }
 }
